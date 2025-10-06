@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
+import Image from 'next/image';
 import {
   BookOpen,
   Brain,
@@ -159,27 +160,33 @@ export default function LandingPage() {
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
-          <motion.div className="flex items-center space-x-2" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <BookOpen className="h-6 w-6 text-white" />
-            </div>
+          <motion.div 
+            className="flex items-center space-x-2" 
+            whileHover={{ scale: 1.05 }} 
+            whileTap={{ scale: 0.95 }}>
+          
+          <div className="w-10 h-10 flex-shrink-0">
+            <Image
+              src="/images/logo-najhine.png" 
+              alt="Logo Najhine"
+              width={40}
+              height={40}
+              className="rounded-full"
+            /> 
+          </div>
+
+          {/* Najhine By Nexus Connect */}
+          <div className="flex flex-col leading-none">
             <span className="text-2xl font-bold text-gray-900">Najhine</span>
+            <span className="text-[0.6rem] text-gray-500 whitespace-nowrap">
+              By&nbsp;Nexus&nbsp;Connect
+            </span>
+          </div>
           </motion.div>
 
           {/* Navigation Desktop - CORRECTION PRINCIPALE */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection("fonctionnalites")}
-              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
-            >
-              Fonctionnalités
-            </button>
-            <button
-              onClick={() => scrollToSection("comment-ca-marche")}
-              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
-            >
-              Comment ça marche
-            </button>
+            
             <button
               onClick={() => scrollToSection("enseignants")}
               className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
@@ -229,24 +236,7 @@ export default function LandingPage() {
               className="md:hidden bg-white/95 backdrop-blur-lg border-t border-gray-200/20"
             >
               <nav className="flex flex-col space-y-4 p-6">
-                <button
-                  onClick={() => {
-                    scrollToSection("fonctionnalites")
-                    setIsMenuOpen(false)
-                  }}
-                  className="text-left text-gray-700 hover:text-blue-600 font-medium transition-colors"
-                >
-                  Fonctionnalités
-                </button>
-                <button
-                  onClick={() => {
-                    scrollToSection("comment-ca-marche")
-                    setIsMenuOpen(false)
-                  }}
-                  className="text-left text-gray-700 hover:text-blue-600 font-medium transition-colors"
-                >
-                  Comment ça marche
-                </button>
+                
                 <button
                   onClick={() => {
                     scrollToSection("enseignants")
@@ -285,8 +275,8 @@ export default function LandingPage() {
         {/* Background image avec overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/students-library.png"
-            alt="Étudiants collaborant dans une bibliothèque"
+            src="/images/tableau-najhine.png"
+            alt="Tableau Najhine interactif"
             className="w-full h-full object-cover"
           />
           {/* Overlay gradient pour lisibilité */}
@@ -308,10 +298,10 @@ export default function LandingPage() {
               transition={{ delay: 0.2 }}
             >
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Transformez
+                Réussir facilement?
               </span>
               <br />
-              <span className="text-gray-900">l'apprentissage de vos enfants</span>
+              <span className="text-gray-900">C'est possible avec Najhine !</span>
             </motion.h1>
 
             <motion.p
@@ -320,7 +310,7 @@ export default function LandingPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              La plateforme éducative IA qui personnalise chaque leçon et motive naturellement avec{" "}
+              Najhine est une plateforme personnalisée, interactive et engageante. Elle propose des cours de soutien novateurs, des méthodes d'apprentissage performantes et un accompagnement adapté, du primaire jusqu'à l'enseignement supérieur.{" "}
               <span className="font-bold text-green-600">93% de taux d'engagement</span>
             </motion.p>
 
